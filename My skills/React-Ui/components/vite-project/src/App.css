@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.rating{
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  width: max-content;
+  padding: .2rem 1rem;
+  background: blueviolet;
+  color: white;
+}
+.white{
+  color: #666;
+}
+.star{
+  color: white;
+}
