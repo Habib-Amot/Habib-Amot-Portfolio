@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result | Poll</title>
+</head>
+<body>
+    <h1>here is the result for</h1>
+    <p>{{question.question}}</p>
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>
+                {{choice.choice_text}}: <small>{{choice.votes}}</small>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'homepage' %}">Back to Home</a>
+</body>
+</html>

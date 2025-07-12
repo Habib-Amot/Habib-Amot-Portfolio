@@ -1,10 +1,11 @@
-let me = {
-    name: 'habib',
-    23: 'me'
+// Object creation in JS
+let Car = {
+    brand: "Mercedes Benz",
+    model:"ES 350",
+    year: 2024,
+    displayInfo: function (){
+        console.log(`${this.year} ${this.brand} ${this.model}`)
+    } 
 }
+console.log(Car.displayInfo())
 
-for (let value in me) {
-    console.log(value);
-}
-console.log(Array.isArray(me))
-console.log(typeof me === 'object')
