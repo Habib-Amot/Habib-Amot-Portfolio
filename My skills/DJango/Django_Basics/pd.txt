@@ -1,0 +1,21 @@
+import random
+from datetime import datetime, timedelta
+from django.utils import timezone
+from UsingModels.models import Blog, Author, Entry
+
+Blog.objects.all().delete()
+Author.objects.all().delete()
+Entry.objects.all().delete()
+
+blogs_data = [{"name": "Tech Insights", "tagline": "Cutting-edge technology news and analysis"},{"name": "Food Adventures", "tagline": "Exploring culinary delights around the world"},{"name": "Travel Diaries", "tagline": "Journeys and experiences from across the globe"},{"name": "Fitness Zone", "tagline": "Health, wellness and workout tips"},{"name": "Book Nook", "tagline": "Reviews and discussions about literature"}]
+
+blogs = [Blog(**data) for data in blogs_data]
+Blog.objects.bulk_create(blogs)
+blogs = Blog.objects.all()  # Refresh to get IDs
+
+
+authors_data = [{"name": "John Smith", "email": "john.smith@example.com", "age": 32},{"name": "Emily Johnson", "email": "emily.j@example.com", "age": 28},{"name": "Michael Brown", "email": "michael.b@example.com", "age": 45},{"name": "Sarah Davis", "email": "sarah.d@example.com", "age": 29},{"name": "Robert Wilson", "email": "robert.w@example.com", "age": 37},{"name": "Jennifer Lee", "email": "jennifer.l@example.com", "age": 31},{"name": "David Taylor", "email": "david.t@example.com", "age": 42}]
+
+authors = [Author(**data) for data in authors_data]
+Author.objects.bulk_create(authors)
+authors = Author.objects.all()
