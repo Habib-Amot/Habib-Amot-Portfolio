@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-ysjsdwrk!w5zu+oorrhi%p91^#k*tm)e7ykp9-as)6-7&ecf@9
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SITE_UNDER_MAINTENANCE = False  # Custom setting to control maintenance mode
 
 
 # Application definition
@@ -38,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'PollsApp',
-    'UsingModels'
+    'UsingModels',
+    'HandlingHttpRequest',
+    'WorkingWithForms'
 ]
 
 MIDDLEWARE = [
+    'HandlingHttpRequest.middleware.SiteUnderMaintenance.SiteUnderMaintenanceMiddleware',  # Custom middleware for site maintenance
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -49,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'HandlingHttpRequest.middleware.AlterContent.AlterUserResponseMiddleware'
 ]
 
 ROOT_URLCONF = 'Django_Basics.urls'

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 # it is also possible to use models across files by importing the model we want to use
 from PollsApp.models import Question
 
@@ -130,6 +131,10 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     pub_date = models.DateField()
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse("edit-book", kwargs={"book_index": self.pk})
+    
     
 
 class Store(models.Model):

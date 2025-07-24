@@ -20,5 +20,22 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('polls/', include('PollsApp.urls'))
+    path('polls/', include('PollsApp.urls')),
+    path('http/', include('HandlingHttpRequest.urls')),
+    path('forms/', include('WorkingWithForms.urls'))
 ]
+
+def Error400(request, err):
+    return 'Bad Request'
+def Error403(request, err):
+    return 'Access Denied'
+def Error404(request, err):
+    return 'Not Found'
+
+def Error500(request):
+    return "Server Down or Not Responding"
+
+handler400 = Error400
+handler403 = Error403
+handler404 = Error404
+handler500 = Error500
