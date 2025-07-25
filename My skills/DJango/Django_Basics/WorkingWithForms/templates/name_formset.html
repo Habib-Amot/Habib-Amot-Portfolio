@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+        body{
+            padding: .5rem;
+        }
+        .form-block{
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    {% comment %} this form uses dynamuc url since it will be included by other views {% endcomment %}
+    <form action='{% url form_url num_of_user %}' method='post'>
+        {% csrf_token %}
+        {{formset.management_form}}
+        {% for form in formset %}
+            <div class="form-block">
+                {% for field  in form %}
+                    <p>{{field.label}}</p>
+                    {{field}}
+                {% endfor %}
+                <br>
+            </div>
+        {% endfor %}
+        <input type="submit" value="enter data">
+    </form>
+</body>
+</html>

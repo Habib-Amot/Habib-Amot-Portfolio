@@ -130,7 +130,7 @@ class Book(models.Model):
     review = models.IntegerField(default=0)
     authors = models.ManyToManyField(Author)
     pub_date = models.DateField()
-    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, null=True)
 
     def get_absolute_url(self):
         return reverse("edit-book", kwargs={"book_index": self.pk})
