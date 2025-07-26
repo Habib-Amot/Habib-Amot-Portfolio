@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('PollsApp.urls')),
     path('http/', include('HandlingHttpRequest.urls')),
-    path('forms/', include('WorkingWithForms.urls'))
+    path('forms/', include('WorkingWithForms.urls')),
+    path('templates', include('HandlingTemplates.urls'))
 ]
 
 def Error400(request, err):

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'PollsApp',
     'UsingModels',
     'HandlingHttpRequest',
-    'WorkingWithForms'
+    'WorkingWithForms',
+    'HandlingTemplates'
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'HandlingTemplates.context_processors.site_email.siteEmail'  # this is a custom processor that is used in all template
             ],
         },
     },
@@ -127,3 +129,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# some dummy data
+SITE_TEMPLATE_EMAIL = 'somedummyemail@gmail.com'  # this email is rendered inside our template and consumed by our context prepreocessor

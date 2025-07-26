@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About Me</li>
+                <li>Contact Me</li>
+                <li>Projects</li>
+            </ul>
+        </nav>
+        {% block main-section %}
+            <div class="main-section">
+                this is the main section of our template website
+            </div>
+        {% endblock main-section %}
+        <footer>
+            this is the main footer for the entire website
+            &copy; all rights reserved {{SITE_EMAIL}}
+        </footer>
+    </div>
+
+</body>
+</html>

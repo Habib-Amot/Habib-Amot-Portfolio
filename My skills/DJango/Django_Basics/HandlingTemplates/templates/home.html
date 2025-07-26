@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% comment %} this is our home file and it inherits from our base file {% endcomment %}
+{% block main-section %}
+    <div class="parent-container">
+        {% comment %} we can make use of loops in templates {% endcomment %}
+         {% for author  in authors %}
+            {% comment %} we can also execute conditions to test for logics {% endcomment %}
+            {% if author.book_count > 0 %} {% comment "" %} only showing authors that has written at least one book{% endcomment %}
+
+            {% comment %} also we might want to make use of filters to transform data {% endcomment %}
+            {% comment %} for example we might want to truncate author names that are more than two words long {% endcomment %}
+                <p>Name: {{author.name | truncatewords:2}}</p>
+                <small>Email: {{author.email}} </small> <br>
+                <i>Books written: {{author.book_count}} </i> <br>
+                <small>Highest Book Price: ${{author.highest_book_price}} </small>
+                <p><i>Top Rating: {{author.top_review}} <small>Likes: {{author.top_rated}}</small></i></p>
+                 <br>
+                <br>
+            {% endif %}
+         {% endfor %}
+    </div>
+{% endblock main-section %}
