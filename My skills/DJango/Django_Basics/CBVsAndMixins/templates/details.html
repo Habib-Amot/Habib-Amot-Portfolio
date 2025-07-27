@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Name: {{author.name | truncatewords:2}}</p>
+    <small>Email: {{author.email}} </small> <br>
+    <i>Books written: {{author.book_count}} </i> <br>
+    <small>Highest Book Price: ${{author.highest_book_price}} </small>
+    <p><i>Top Rating: {{author.top_review}} <small>Likes: {{author.top_rated}}</small></i></p>
+        <br>
+    <br>
+
+</body>
+</html>

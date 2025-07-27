@@ -1,6 +1,7 @@
 from django import forms
 from UsingModels.models import Book
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 class NameForm(forms.Form):
     my_name = forms.CharField(label="Enter your Name:", max_length=100, min_length=6, help_text='enter your name')
@@ -23,3 +24,7 @@ class BookForm(forms.ModelForm):
         labels = {
             'title': _('this is the title of the book')
         }
+
+class AuthorForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())

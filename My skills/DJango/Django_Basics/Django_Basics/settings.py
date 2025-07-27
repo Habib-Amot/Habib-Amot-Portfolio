@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'UsingModels',
     'HandlingHttpRequest',
     'WorkingWithForms',
-    'HandlingTemplates'
+    'HandlingTemplates',
+    'CBVsAndMixins'
 ]
 
 MIDDLEWARE = [
