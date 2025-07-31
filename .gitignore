@@ -1,1 +1,4 @@
 RunningTests/
+
+# ignoring all python files that is directly created inside the Django Basics Folder
+DJANGO_BASICS/*.py
