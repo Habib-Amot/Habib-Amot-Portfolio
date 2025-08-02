@@ -26,6 +26,7 @@ urlpatterns = [
     path('templates/', include('HandlingTemplates.urls')),
     path('cbvs/', include('CBVsAndMixins.urls')),
     path('user/', include('AuthenticationAndAuthorization.urls')),
+    path('cache/', include("UsingCache.urls"))
 ]
 
 def Error400(request, err):

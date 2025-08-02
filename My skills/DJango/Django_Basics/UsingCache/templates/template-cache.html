@@ -1,0 +1,21 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% cache 200 sidebar  %}
+        <aside class="sidebar">
+            {% for publisher in Publisher %}
+                <h3>{{publisher.name}}</h3>
+            {% endfor %}
+        </aside>
+    {% endcache %}
+    <main>
+        this is the main part of our website but the side bar is beig controlled and handled by the cache framework
+    </main>
+</body>
+</html>

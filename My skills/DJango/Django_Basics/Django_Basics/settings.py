@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'HandlingTemplates',
     'CBVsAndMixins',
     'AuthenticationAndAuthorization',
+    'UsingCache'
 ]
 
 MIDDLEWARE = [
@@ -90,6 +91,12 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default':{
+        'BACKEND':"django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "site-cache",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

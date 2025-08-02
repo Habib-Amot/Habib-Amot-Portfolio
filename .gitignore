@@ -1,4 +1,4 @@
-RunningTestss/
+RunningTests/
 
 # ignoring all python files that is directly created inside the Django Basics Folder
-DJANGO_BASICS/*.py
+My skills/DJango/Django_Basics/*.py
