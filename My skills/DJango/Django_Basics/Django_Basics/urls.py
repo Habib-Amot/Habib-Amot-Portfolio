@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from SendingMails import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,9 @@ urlpatterns = [
     path('templates/', include('HandlingTemplates.urls')),
     path('cbvs/', include('CBVsAndMixins.urls')),
     path('user/', include('AuthenticationAndAuthorization.urls')),
-    path('cache/', include("UsingCache.urls"))
+    path('cache/', include("UsingCache.urls")),
+    path('mail/', views.EmailUser.as_view(), name='email-sender'),
+    path('mail-attachment/', views.EmailWithAttachment.as_view(), name='email-attachment'),
 ]
 
 def Error400(request, err):
