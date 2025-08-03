@@ -1,4 +1,6 @@
-RunningTests/
+.env
 
-# ignoring all python files that is directly created inside the Django Basics Folder
-My skills/DJango/Django_Basics/*.py
+backup-data.json
+backup-tool.py
+cleaned-data.json
+RunningTests/
