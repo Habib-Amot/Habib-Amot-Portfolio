@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.urls import include
 from SendingMails import views
+from Pagination import views as pagination_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,7 @@ urlpatterns = [
     path('cache/', include("UsingCache.urls")),
     path('mail/', views.EmailUser.as_view(), name='email-sender'),
     path('mail-attachment/', views.EmailWithAttachment.as_view(), name='email-attachment'),
+    re_path('author-list/', pagination_view.author_view, name="paginated-author-view")
 ]
 
 def Error400(request, err):

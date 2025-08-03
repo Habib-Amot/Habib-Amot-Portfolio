@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent-container">
+        <h2>Author</h2>
+
+        {% for author in author_page %}
+            <h5>{{author.name | upper}}</h5>
+            <small>{{author.email}}: {{author.age}}</small>
+        {% endfor %}
+
+        <div class="navigations">
+            {% if author_page.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{author_page.previous_page_number}}">previous</a>
+            {% endif %}
+
+            <span>
+                {{author_page.number}} of {{author_page.paginator.num_pages}}
+            </span>
+
+            {% if author_page.has_next %}
+                <a href="?page={{author_page.next_page_number}}">&raquo; next</a>
+                <a href="?page={{author_page.paginator.num_pages}}">last</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

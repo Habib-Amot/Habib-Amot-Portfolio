@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'CBVsAndMixins',
     'AuthenticationAndAuthorization',
     'UsingCache',
-    'SendingMails'
+    'SendingMails',
+    'Pagination'
 ]
 
 MIDDLEWARE = [
