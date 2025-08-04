@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'AuthenticationAndAuthorization',
     'UsingCache',
     'SendingMails',
-    'Pagination'
+    'Pagination',
+    'UsingSignals'
 ]
 
 MIDDLEWARE = [

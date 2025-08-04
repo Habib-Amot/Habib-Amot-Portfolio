@@ -19,6 +19,7 @@ from django.urls import path, re_path
 from django.urls import include
 from SendingMails import views
 from Pagination import views as pagination_view
+from UsingSignals import views as signal_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +32,8 @@ urlpatterns = [
     path('cache/', include("UsingCache.urls")),
     path('mail/', views.EmailUser.as_view(), name='email-sender'),
     path('mail-attachment/', views.EmailWithAttachment.as_view(), name='email-attachment'),
-    re_path('author-list/', pagination_view.author_view, name="paginated-author-view")
+    re_path('author-list/', pagination_view.author_view, name="paginated-author-view"),
+    path('signal/', signal_view.simple_view)
 ]
 
 def Error400(request, err):
