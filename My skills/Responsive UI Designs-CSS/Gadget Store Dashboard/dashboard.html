@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85cb9b2643.js" crossorigin="anonymous"></script>  
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./responsive.css">
 </head>
 <body>
   <div class="parent-container">
@@ -29,7 +30,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
-        <div class="settings">
+        <div class="settings mobile-settings">
           <div class="settings-opt1">
             <i class="fa-solid fa-bell" style="color: blueviolet;"></i>
             <i class="fa-solid fa-gear"></i>
@@ -46,6 +47,7 @@
             Create
           </button>
         </div>
+        <i class="fa-solid fa-bars menu-icon"></i>
       </div>
       <div class="options-bar">
         <div class="options">
@@ -88,11 +90,11 @@
         </button>
       </div>
       <div class="product-type-selection">
-          <p class="active-cat">All Products</p>
-          <p>Shipping Rates</p>
-          <p>Coupons</p>
-          <p>Tax Rates</p>
-          <p>Pricing Tables</p>
+        <p class="active-cat">All Products</p>
+        <p>Shipping Rates</p>
+        <p>Coupons</p>
+        <p>Tax Rates</p>
+        <p>Pricing Tables</p>
       </div>
       <div class="product-filter-section">
         <div class="filters">
@@ -132,7 +134,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td data-label="Product">
               <span class="product-name">
                 <img src="./assets/wireless-earbuds.jpeg" alt="drone-image">
                 <span>
@@ -141,17 +143,16 @@
                 </span>
               </span>
             </td>
-            <td>49.99 USD</td>
-            <td>
+            <td data-cell="Price">49.99 USD</td>
+            <td data-cell="Status">
               <span class="status"><i class="fa-solid fa-check"></i>Active</span>
             </td>
-            <td>320</td>
-            <td>15,996.80 USD</td>
-            <td>2025-01-15  ---</td>
+            <td data-cell="Total Sales">320</td>
+            <td data-cell="Total Revenue">15,996.80 USD</td>
+            <td data-cell="created At">2025-01-15  ---</td>
           </tr>
           <tr>
-            <tr>
-              <td>
+            <td>
                 <span class="product-name">
                   <img src="./assets/iphone13.jpeg" alt="drone-image">
                   <span>
@@ -159,7 +160,7 @@
                     <small>fashion</small>
                   </span>
                 </span>
-              </td>
+            </td>
             <td>129.99 USD</td>
             <td>
               <span class="status"><i class="fa-solid fa-xmark"></i>Out of Stock</span>

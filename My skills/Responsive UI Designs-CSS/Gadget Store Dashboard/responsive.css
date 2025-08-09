@@ -1,0 +1,169 @@
+/* mobile device layout */
+@media screen and (max-width: 650px) {
+    img{
+        width: 45px;
+        height: 45px;
+    }
+    .settings{
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        width: 250px;
+        height: 100vh;
+        background: blueviolet;
+        z-index: 1000;
+        display: none;
+        visibility: hidden;
+    }
+    .parent-container{
+        padding: 1rem .5rem;
+    }
+    .parent-container .header{
+        padding-inline: .3rem;
+        overflow: hidden;
+    }
+     .parent-container .header .brand-section{
+        display: flex;
+        justify-content: space-between;
+        gap: .5rem;
+    }
+    .parent-container .header .brand-section .brand{
+        gap: .2rem;
+    }
+    .parent-container .header .brand-section .brand .logo{
+        flex-direction: column;
+    }
+    .parent-container .header .brand-section .brand .site-language{
+        border-inline: none;
+        flex-wrap: nowrap;
+        text-wrap: nowrap;
+    }
+    
+    .parent-container .header .brand-section .search{
+        width: 200px;
+    }
+    .parent-container .header .brand-section .menu-icon{
+        display: block;
+        font-size: 1rem;
+        color: blueviolet;
+    }
+    .parent-container .header .options-bar .options{
+        gap: .8rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    .parent-container .header .options-bar .assistant{
+        position: fixed;
+        bottom: 3rem;
+        right: 2rem;
+    }
+    .parent-container .header .options-bar .assistant span{
+        display: none;
+    }
+    .parent-container .header .options-bar .assistant i{
+        font-size: 1.5rem;
+        background: blueviolet;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 0 10px rgba(138, 43, 226, 0.75);
+    }
+    .parent-container .product-container{
+        padding-inline: .3rem;
+    }
+    .parent-container .product-container .product-filter-section{
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: .6rem;
+    }
+    .parent-container .product-container .product-header button{
+        padding-inline: 1rem;
+        background: black;
+    }
+    .parent-container .product-container .product-type-selection{
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        
+    }
+    .parent-container .product-container .product-type-selection p{
+        text-wrap: nowrap;
+    }
+     .parent-container .product-container .product-filter-section .filter-option{
+        width: 100%;
+        gap: 1.5rem;
+     }
+     .parent-container .product-container .product-filter-section .filter-option input{
+        flex-grow: 1;
+        height: 32px;
+     }
+     .parent-container .product-container .product-filter-section .filter-option .view-type{
+        height: 32px;
+        width: 42px;
+     }
+
+    .product-display-table{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .product-display-table tbody,
+    .product-display-table tr,
+    .product-display-table th,
+    .product-display-table td{
+        width: 100%;
+        display: block;
+    }
+
+    .product-display-table th{
+        display: none;
+    }
+    .product-display-table td{
+        padding: .5rem 1rem;
+    }
+    .product-display-table td:first-child{
+        padding-top: 1.5rem;
+    }
+    .product-display-table td:last-child{
+        padding-bottom: 1.5rem;
+    }
+    .product-display-table td{
+        display: grid;
+        grid-template-columns: 30ch auto;
+    }
+    
+    .product-display-table td::before{
+        font-size: 12px;
+        text-transform: capitalize;
+        opacity: .7;
+    }
+    .product-display-table td:nth-of-type(1)::before{
+        content: "Product:";
+    }
+    .product-display-table td:nth-of-type(2)::before{
+        content: "Price:";
+    }
+    .product-display-table td:nth-of-type(3)::before{
+        content: "Status:";
+    }
+    .product-display-table td:nth-of-type(4)::before{
+        content: "Total Sales:";
+    }
+    .product-display-table td:nth-of-type(5)::before{
+        content: "Total Revenue:";
+    }
+    .product-display-table td:nth-of-type(6)::before{
+        content: "Creation Date:";
+    }
+
+
+
+}
