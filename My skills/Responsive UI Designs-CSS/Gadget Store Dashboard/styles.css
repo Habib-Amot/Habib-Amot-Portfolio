@@ -169,6 +169,23 @@ body{
   align-items: center;
   gap: 1rem;
 }
+.parent-container .header .brand-section .settings h3{
+  display: none;
+}
+
+.parent-container .header .brand-section .settings #close-btn{
+  display: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: blueviolet;
+  box-shadow: 0px 0px 8px #333;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+}
 .parent-container .header .brand-section .settings *[class|="settings"]{
   display: flex;
   gap: .8rem;

@@ -31,21 +31,23 @@
           </button>
         </div>
         <div class="settings mobile-settings">
+          <h3 class='header'>settings</h3>
           <div class="settings-opt1">
-            <i class="fa-solid fa-bell" style="color: blueviolet;"></i>
-            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-bell" style="color: blueviolet;" cell-data="notification"></i>
+            <i class="fa-solid fa-gear" cell-data="options"></i>
           </div>
-          <span class="settings-toggle">
-            <div class="tog-switch">
+          <span class="settings-toggle" cell-data="theme">
+            <div class="tog-switch" cell-data="theme">
               <input type="checkbox" id="tog-circle"/>
               <label for="tog-circle" class="tog-circle"></label>
             </div>
             <span class="tog-text">Light Mode </span>
           </span>
-          <button>
+          <button class="settings-button">
             <i class="fa-solid fa-caret-down"></i>
             Create
           </button>
+          <i class="fa-solid fa-xmark" id="close-btn"></i>
         </div>
         <i class="fa-solid fa-bars menu-icon"></i>
       </div>
@@ -322,7 +324,7 @@
       </table>
     </div>
   </div>
-
+<script src='./script.js'></script>
 <script>
   let statuses = document.getElementsByClassName('status');
   let status_class = {
