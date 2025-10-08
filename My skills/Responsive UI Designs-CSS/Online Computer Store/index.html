@@ -1,0 +1,545 @@
+<!-- this is an online computer store that showcases the products that are available in the store
+ this exercise is not intented to be a fully functional website, rather it is just to showcase responsiveness across browsers
+ and devices
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <script src="https://kit.fontawesome.com/85cb9b2643.js" crossorigin="anonymous"></script> 
+    
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/responsiveness.css">
+    <title>Home | Shappp</title>
+</head>
+<body>
+    <div class="parent-container">
+        <aside class="side-bar-section">
+            <div class="site-logo">
+                <img src="./assets/logo.png" alt="">
+                <h2>Shappp</h2>
+            </div>
+            <div class="filter-section">
+                <div class="filter-header">
+                    <p>Filter</p>
+                    <p>Clear all</p>
+                </div>
+                <div class="selected-filter">
+                    <div class="filter-class">City <i class="fa-solid fa-xmark"></i></div>
+                    <div class="filter-class">Condition <i class="fa-solid fa-xmark"></i></div>
+                    <div class="filter-class">Other <i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="filter-category">
+                    <label for="city-cat">
+                        <p>City</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </label>
+                    <input type="checkbox" name="city" id="city-cat" checked>
+                    <div class="filter-options">
+                        <div class="option">
+                            <input type="checkbox" name="DKI Jakarta" id="">
+                            <p>DKI Jakarta</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Bandung" id="">
+                            <p>Bandung</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Medan" id="">
+                            <p>Medan</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Semarang" id="">
+                            <p>Semarang</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Bogor" id="">
+                            <p>Bogor</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Depok" id="">
+                            <p>Depok</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Demalang" id="">
+                            <p>Demalang</p>
+                        </div>
+                    </div>
+                    <small>see more</small>
+                </div>
+                <div class="filter-category">
+                    <label for="Condition-cat">
+                        <p>Condition</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </label>
+                    <input type="checkbox" name="condition" id="Condition-cat" checked>
+                    <div class="filter-options">
+                        <div class="option">
+                            <input type="checkbox" name="new" id="">
+                            <p>New</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Second" id="">
+                            <p>Second</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="refurbish" id="">
+                            <p>refurbish</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-category">
+                    <label for="Color-cat">
+                        <p>Color</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </label>
+                    <input type="checkbox" name="color" id="Color-cat" checked>
+                    <div class="filter-options color-options">
+                        <div class="option">
+                            <small style="--color:red"></small>
+                            <p>Red</p>
+                        </div>
+                        <div class="option">
+                            <small style="--color:blue"></small>
+                            <p>Blue</p>
+                        </div>
+                        <div class="option">
+                            <small style="--color:brown"></small>
+                            <p>Brown</p>
+                        </div>
+                        <div class="option">
+                            <small style="--color:yellow"></small>
+                            <p>Yellow</p>
+                        </div>
+                        <div class="option">
+                            <small style="--color:Orange"></small>
+                            <p>Orange</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-category">
+                    <label for="Other-cat">
+                        <p>Other</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </label>
+                    <input type="checkbox" name="condition" id="Other-cat" checked>
+                    <div class="filter-options">
+                        <div class="option">
+                            <input type="checkbox" name="3 stars and above" id="">
+                            <p><i class="fa-solid fa-star"></i>3 stars and above</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="Official store" id="">
+                            <p><i class="fa-solid fa-certificate" style="color:#000"></i> Official Store</p>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="new release" id="">
+                            <p><i style="background:black; color:#fff;" data-new>new</i>new release</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="main-content-section">
+            <div class="products-header-section">
+                <div class="site-banner-section">
+                    <div class="site-logo">
+                        <img src="./assets/logo.png" alt="company logo">
+                        <h2>Shappp</h2>
+                    </div>
+                    <span class="material-symbols-outlined">filter_list</span>
+                </div>
+                <nav class="site-navigation-section">
+                    <div class="search-bar-section">
+                        <div class="dropdown-menu-section">
+                            <div class="dropdown-menu">
+                                <div class="selected-option">
+                                    <input type="text" value="" placeholder="categories" readonly>
+                                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                                </div>
+                                <div class="options">
+                                    <div class="option active">All</div>
+                                    <div class="option">Laptops</div>
+                                    <div class="option">Desktops</div>
+                                    <div class="option">Monitors</div>
+                                    <div class="option">Accessories</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-section">
+                            <input type="text" placeholder="Search products" class="search-input">
+                            <i class="fa-solid fa-times"></i>
+                        </div>
+                        <button class="search-btn">
+                            <i class="fa-solid fa-search"></i>
+                            <p>search</p>
+                        </button>   
+                    </div>
+                    <div class="user-actions-section">
+                        <div class="profile-bar">
+                            <div class="user-icon">
+                                <img src="./assets/user-icon.png" alt="user avatart">
+                            </div>
+                            <div class="profile-name">
+                                Amot Tech
+                            </div>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div class="actions">
+                            <div class="username">
+                                Amot Tech
+                            </div>
+                            <div class="action active">
+                                <i class='fa-solid fa-user'></i>
+                                User profile
+                            </div>
+                            <div class="action">
+                                <i class="fa-solid fa-message"></i>
+                                Messages
+                                <div class="badge">9+</div>
+                            </div>
+                            <div class="action">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                My Cart
+                                <div class="badge">3</div>
+                            </div>
+                            <div class="action">
+                                <i class="fa-solid fa-gear"></i>
+                                Account Settings
+                            </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+                <div class="breadcrumb-section">
+                    <p>Mouse Gaming</p>
+                    <p>Keypad</p>
+                    <p>Fantech Keyboard</p>
+                    <p>60&percnt; Keyboard</p>
+                    <p>Computer</p>
+                    <p>Laptops</p>
+                </div>
+            </div>
+            <div class="products-container">
+                <div class="product-header-section">
+                    <div class="product-navs">
+                        <div class="view-type">
+                            <div class="active">Products</div>
+                            <div>Store</div>
+                        </div>
+                        <div class="filters">
+                            <div class="price-filter">
+                                <div class="input">
+                                    <small>Price</small>
+                                    <h4>300.000-5.200.000</h4>
+                                </div>
+                                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                            <div class="sort-filter">
+                                <div class="input">
+                                    <small>Sort by</small>
+                                    <h4>Reviews</h4>
+                                </div>
+                                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="search-results">
+                        Showing 1.234 Products for <span>"Fantech gaming"</span>
+                    </small>
+                </div>
+                <div class="main-products-section">
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/mouse.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>Fantech X15s Super Fast Wireless Gaming Mouse</h3>
+                            <p>60% Mechanical Gaming Mouse RGB Backlit Wired for PC Laptop Mac - Gateron Optical Red Switch</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (234 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jakarta <small>Indonesia</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 40.00</div>
+                                <div class="percent-off">50%</div>
+                                <div class="sales-price">&#8358; 20.00</div>
+                            </div>
+                            <div class="amount-sold">340 sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/56in_Gaming_Desk__3_Levels_Electric_Lift_Standing_Desk.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>56in Gaming Desk 3 Levels Electric Lift Standing Desk</h3>
+                            <p>
+                                Flexible 3-level height adjustment, electric lift standing desk, suitable for gaming and office work
+                            </p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (320 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jakarta <small>Indonesia</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 120.99</div>
+                                <div class="percent-off">20%</div>
+                                <div class="sales-price">&#8358; 100.00</div>
+                            </div>
+                            <div class="amount-sold">1k+ sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/ANT_PC_PHARAOH_SERIES_Enthusiast_Gaming_PC.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>ANT PC PHARAOH SERIES Enthusiast Gaming PC</h3>
+                            <p>
+                                AMD Ryzen 5 5600X 6-Core, NVIDIA GeForce RTX 3060 12GB, 16GB DDR4, 512GB NVMe SSD, WiFi, RGB, Windows 11 Home
+                            </p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (568 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jakarta <small>India</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 500k.50</div>
+                                <div class="percent-off">0%</div>
+                                <div class="sales-price">&#8358; 500k.50</div>
+                            </div>
+                            <div class="amount-sold">34k+ sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/Auriculares_Para_Juegos_Eksa_E900_Con_Micrófono_Para_Pc_ps4_ps5_xbox.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>Auricalares Para Juegos PS4/PS5 Xbox</h3>
+                            <p>
+                                Auriculares Para Juegos EKSA E900 Con Micrófono Para PC ps4 ps5 xbox
+                            </p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (4k+ reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Sony Store <small></small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 400k.00</div>
+                                <div class="percent-off">20%</div>
+                                <div class="sales-price">&#8358; 320k.00</div>
+                            </div>
+                            <div class="amount-sold">340k+ sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/Monitor_Gamer_Samsung_24__FHD.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>Monitor Gamer Samsung 24 FHD</h3>
+                            <p>OLED Fullscreen Slim Screen with Built-In in memory display Card</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (100 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jakarta <small>Indonesia</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 390k.00</div>
+                                <div class="percent-off">5%</div>
+                                <div class="sales-price">&#8358; 372k.00</div>
+                            </div>
+                            <div class="amount-sold">4k sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/zelotes_7200DPI_Wired_Gaming_Mouse_7.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>zelotes 7200DPI Wired Gaming Mouse</h3>
+                            <p>Gamer Wired Mouse with customizable LCD Light</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (678 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Gadgets Store <small>Nigeria</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 14k.00</div>
+                                <div class="percent-off">10%</div>
+                                <div class="sales-price">&#8358; 136k.00</div>
+                            </div>
+                            <div class="amount-sold">5.6k+ sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/SteelSeries_Apex_3_Gaming_Keyboard.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>SteelSeries Apex 3 Gaming Keyboard</h3>
+                            <p>Steel Series Lighting Fast Mechanical Gaming Keyboard</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (260 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Jakarta <small>Indonesia</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">USD 40.00</div>
+                                <div class="percent-off">50%</div>
+                                <div class="sales-price">USD 20.00</div>
+                            </div>
+                            <div class="amount-sold">500 sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-section">
+                            <img src="./assets/Redragon_Kumara_K552-RGB_LED_Backlit_USB_Mechanical_Gaming_Keyboard.png" alt="product image">
+                        </div>
+                        <div class="product-details-section">
+                            <h3>Redragon Kumara USB Mechanical Keyboard</h3>
+                            <p>60% Mechanical Gaming Keyboard RGB Backlit Wired for PC Laptop Mac - Gateron Optical Red Switch</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="reviews">
+                                    (499 reviews)
+                                </div>
+                            </div>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Gaming Shop <small>Ikeja</small></p>
+                            </div>
+                            <div class="price">
+                                <div class="amount">&#8358; 150k.00</div>
+                                <div class="percent-off">10%</div>
+                                <div class="sales-price">&#8358; 135k.00</div>
+                            </div>
+                            <div class="amount-sold">3.4k sold</div>
+                            <button class="add-to-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts/scripts.js" >
+        
+    </script>
+</body>
+</html>

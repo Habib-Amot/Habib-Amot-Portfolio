@@ -1,0 +1,66 @@
+:root{
+    --background-color: #fff;
+    --primary-color: #ED4D2D;
+    --secondary-color: #f4f4f4;
+    --tertiary-color: #E5E5E5;
+    --text-color: #333;
+
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
+    text-rendering: optimizeLegibility;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+button{
+    cursor: pointer;
+}
+li{
+    list-style: none;
+}
+.site-logo{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+.site-logo img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.badge{
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;/* 
+    position: absolute;
+    top: -6px;
+    right: -6px; */
+}
+
+.product-card{
+    height: fit-content;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition:all 0.3s ease-in-out;
+}
