@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../output.css">
+    <title>Document</title>
+</head>
+<body class="w-screen h-screen bg-[url(../assets/images/bg-image.jpeg)] relative flex items-center justify-between font-display before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:opacity-70 before:z-0 py-5 px-20">
+    <div class="parent-container z-10 w-full h-full flex justify-between gap-5">
+        <div class="banner grow flex flex-col justify-between pb-10">
+            <div class="header flex items-baseline justify-between">
+                <div class="logo">
+                    <h1 class="text-4xl/[20px] font-bold text-white mb-2">Job<span class="text-facebook-blue underline">Finder</span> </h1>
+                    <p class="text-white text-xs">Your gateway to endless job opportunities</p>
+                </div>
+                <h4 class="font-bold text-2xl text-gray-300">Sign in</h4>
+            </div>
+            <div class="banner-content mb-10">
+                <h2 class="font-bold text-4xl text-white mb-4">
+                    Easy Access, Faster Careers, Better Opportunities <br>
+                    Find Your Dream Job Today!
+                </h2>
+                <p class="text-white text-lg">Join Job<span class="text-facebook-blue underline">Finder</span> and unlock a world of opportunities tailored just for you. Your next career move and Clients is just a click away.</p>
+            </div>
+        </div>
+        <form action="" class="flex flex-col gap-6 w-[520px] px-10 py-14 bg-white rounded-lg">
+            <div class="form-header mb-4">
+                <h1 class="font-black text-3xl mb-1 text-gray-900">Welcome Back!</h1>
+                <p class="text-sm text-gray-800">Kindly Enter your login details.</p>
+            </div>
+            <div class="field">
+                <label for="full-name" class="field-label">
+                    Email
+                </label>
+                <input type="email" placeholder="Enter your email" class="input-field placeholder:text-gray-400 placeholder:font-normal placeholder:text-sm invalid:border-red-500 invalid:text-red-600 peer/email">
+
+                <p class="error-message text-xs h-0 invisible peer-[&:not(:focus):invalid]/email:visible peer-[&:not(:focus):invalid]/email:h-auto text-red-500">please enter a valid email address</p>
+            </div>
+            <div class="field">
+                <label for="full-name" class="field-label">
+                    Password
+                </label>
+                <input type="text" placeholder="Enter your Password" class="input-field placeholder:text-gray-400 placeholder:font-normal placeholder:text-sm text-base">
+            </div>
+            <h3 class="font-semibold text-sm">Forgot password ?</h3>
+            <button class="w-full h-[40px] py-2 flex items-center justify-center bg-gray-900 text-white rounded-md text-sm">Sign in</button>
+
+            <small class="text-lg lowercase text-center before:content-[''] before:h-[1px] before:w-[45%] before:bg-gray-200 before:absolute before:top-1/2 before:left-0 after:content-[''] after:h-[1px] after:w-[45%] after:bg-gray-200 after:absolute after:top-1/2 after:right-0 relative">or</small>
+            <button class="w-full h-[40px] py-2 flex items-center justify-center gap-2 bg-transparent text-gray-900 rounded-md text-sm border border-gray-700">
+                <img src="../assets/images/google-icon.png" alt="google-icon" class="w-6 h-6">
+                Continue with Google
+            </button>
+            <p class="text-gray-900 text-center text-sm">Don't have an account ? <a href="" class="text-gray-600 font-semibold">Sign up for free</a></p>
+        
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!-- this class is more focused and geared towards the learning of responsive design using Tailwindcss -->
+ <!-- with TailwindCss, it becomes more easier and simpler to design mobile first applications while other screen sizes can be targeted using many
+  breakpoints that is available in TailwindCss
+
+  So I will be creating a simmple finance page that has just the header part of it designed responsively using TailwindCss
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css"/>
+    <script src="https://kit.fontawesome.com/85cb9b2643.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .link-item:hover *{
+            color: white;
+        }
+        .link-item.selected{
+            background-color: #02403D;
+            color: white;
+        }
+        .link-item.selected *{
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-[Poppins] w-full h-screen min-h-screen dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <div class="parent-container h-full w-full flex">
+        <nav class="fixed top-0 left-0 w-0 transition-[width] h-screen z-40  hidden md:relative  md:visible md:flex flex-col gap-12 bg-white dark:bg-gray-800  basis-xs rounded-xl py-4 px-8" id="navbar">
+            <div class="nav-header flex justify-between items-center">
+                <div class="site-banner flex items-center gap-1">
+                    <img src="../assets/images/Bankio.png" alt="Bankio logo" class="w-[48px] h-[48px]">
+                    <h1 class="font-semibold font-[Poppins] text-2xl text-black dark:text-white">Bankio</h1>
+                </div>
+                <ion-icon name="chevron-down-outline" class="font-semibold text-lg dark:text-white"></ion-icon>
+            </div>
+
+            <div class="nav-links h-auto flex flex-col gap-6">
+                <div class="section flex flex-col gap-3">
+                    <h1 class="uppercase font-bold font-[Poppins] text-xl text-black dark:text-white">Main Menu</h1>
+                    <div class="links w-full flex flex-col gap-3 pl-3">
+                        <div class="link-item">
+                            <ion-icon name="grid-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Dashboard
+                        </div>
+                        <div class="link-item">
+                            <ion-icon name="podium-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Analytics
+                        </div>
+                        <div class="link-item">
+                            <ion-icon name="file-tray-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Investments
+                        </div>
+                        <div class="link-item selected">
+                            <ion-icon name="card-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Transactions
+                        </div>
+                        <div class="link-item">
+                            <i class="fa-solid fa-right-left" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></i>
+                            Transfers
+                        </div>
+                        <div class="link-item">
+                            <ion-icon name="trophy-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Rewards
+                        </div>
+                        <div class="link-item">
+                            <ion-icon name="journal-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Card
+                        </div>
+                    </div>
+                </div>
+                <div class="section flex flex-col gap-3">
+                    <h1 class="uppercase font-bold font-[Poppins] text-xl text-black dark:text-white">Others</h1>
+                    <div class="links w-full flex flex-col gap-3 pl-3">
+                        <div class="link-item">
+                            <ion-icon name="key-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Security
+                        </div>
+                        <label class="group" for="Settings-toggle">
+                            <div class="link-item">
+                                <ion-icon name="Settings-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                                Settings
+                            </div>
+                            <input type="checkbox" class="hidden" id="Settings-toggle"/>
+                            <div class="settings pl-6 hidden mt-3 max-h-0 transition-[max-height] overflow-hidden flex-col gap-1 group-has-checked:flex group-has-checked:max-h-[200px]">
+                                <div class="light flex items-center w-full justify-between mb-2 group/light">
+                                    <p class="text-xs">Light Mode</p>
+                                    <input type="radio" name="theme" id="light-mode-radio" class="hidden"/>
+
+                                    <label for="light-mode-radio" class="group-has-checked/light:bg-green-950 group-has-checked/light:text-white w-fit h-fit p-1 flex items-center justify-center rounded-full" onclick="light_mode()">
+                                        <ion-icon name="sunny-outline" class="group-has-checked/light:text-white"></ion-icon>
+                                    </label>
+                                </div>
+                                <div class="dark flex items-center w-full justify-between group/dark">
+                                    <p class="text-xs">Dark Mode</p>
+                                    <input type="radio" name="theme" id="dark-mode-radio" class="hidden"/>
+                                    <label for="dark-mode-radio" class="group-has-checked/dark:bg-white group-has-checked/dark:text-black w-fit h-fit p-1 flex items-center justify-center rounded-full" onclick="dark_mode()">
+                                        <ion-icon name="moon-outline" class="group-has-checked/light:text-white"></ion-icon>
+                                    </label>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="link-item group" for="Settings-toggle">
+                            <ion-icon name="shield-outline" class="font-black text-gray-950 dark:text-white dark:hover:text-gray-950 hover:text-white"></ion-icon>
+                            Support
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="main-content w-full min-h-full bg-gray-100 dark:bg-gray-900 p-3 md:pl-14 md:pr-10">
+            <div class="header-bar flex flex-col gap-2">
+                <header class="site-header w-full h-auto flex justify-between items-center sm:hidden">
+                    <div class="site-banner flex items-center gap-1">
+                        <img src="../assets/images/Bankio.png" alt="Bankio logo" class="w-[48px] h-[48px]">
+                        <h1 class="font-semibold font-[Poppins] text-2xl text-black dark:text-white">Bankio</h1>
+                    </div>
+                    <div class="user-ico flex items-center gap-2">
+                        <div class="nav-ico">
+                            <ion-icon name="search-outline" class="text-lg"></ion-icon>
+                        </div>                 
+                        <div class="nav-ico">
+                            <span class="notification-badge"></span>
+                            <ion-icon name="mail-outline" class="text-lg"></ion-icon>
+                        </div>                
+                        <div class="nav-ico">
+                            <ion-icon name="notifications-outline" class="text-lg"></ion-icon>
+                        </div>
+                        <ion-icon name="reorder-four-outline" class="text-2xl nav-icon"></ion-icon>
+                    </div>
+                </header>
+                <div class="flex items-center sm:justify-between gap-1 pb-5 border-b border-gray-400">
+                    <div class="user-profile-section flex gap-1">
+                        <img src="../assets/images/profile.jpeg" alt="" class="w-[40px] h-[40px] rounded-full lg:hidden lg:invisible">
+                        <div class="user-info flex flex-col gap-1">
+                            <h1 class="text-lg/tight font-semibold flex">
+                                <p class="before:content-['Hi'] sm:before:content-['Welcome']"></p>, Aubrey Sabrina!
+                            </h1>
+                            <small class="text-sm text-gray-600 font-medium dark:text-gray-200/50">Manage your finace with realtime insight</small>
+                        </div>
+                    </div>
+                    <div class="user-ico items-center gap-2 hidden sm:flex">
+                        <div class="nav-ico">
+                            <ion-icon name="search-outline" class="text-lg"></ion-icon>
+                        </div>                 
+                        <div class="nav-ico">
+                            <span class="notification-badge"></span>
+                            <ion-icon name="mail-outline" class="text-lg"></ion-icon>
+                        </div>                
+                        <div class="nav-ico">
+                            <ion-icon name="notifications-outline" class="text-lg"></ion-icon>
+                        </div>
+                        <ion-icon name="reorder-four-outline" class="text-2xl lg:hidden nav-icon"></ion-icon>
+                        <img src="../assets/images/profile.jpeg" alt="" class="w-[40px] h-[40px] rounded-full hidden md:block lg:visible ml-2.5">
+                    </div>
+                </div>
+            </div>
+            <div class="transaction-section pt-4 flex flex-col gap-4">
+                <div class="transaction-overview flex justify-between gap-2">
+                    <h1 class="font-normal text-2xl sm:text-3xl capitalize">Transaction Activity Overview</h1>
+                    <div class="search flex items-center justify-between gap-3 w-[250px] sm:w-[350px] md:w-[400px]">
+                        <div class="input-section grow h-9 overflow-hidden rounded-lg bg-gray-200">
+                            <input type="text" placeholder="Find transactions" class="w-full h-full bg-transparent outline-none border-none p-3 text-base font-medium placeholder:font-normal dark:text-gray-700"/>
+                        </div>
+                        <div class="nav-ico border-none bg-gray-200 w-[36px] h-[36px]">
+                            <ion-icon name="funnel-outline" class="text-base dark:text-gray-700"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="finance-board flex flex-col md:flex-row gap-2 sm:gap-8">
+                    <div class="income-card card">
+                        <div class="card-details">
+                            <h3 class="text-base/tight text-gray-950">Total Income</h3>
+                            <ion-icon name="arrow-up-outline" class="text-green-500 font-bold"></ion-icon>
+                        </div>
+                        <h1 class="font-semibold font-['Poppins'] text-5xl text-black h-full flex justify-center items-center grow">$5,200.00</h1>
+                        <div class="card-details">
+                            <small class="income-change">
+                                +8.5%
+                            </small>
+                            <p class="text-center text-base/tight text-gray-950">Last Month</p>
+                        </div>
+                    </div>
+                    <div class="expense-balance flex gap-2 sm:gap-8">
+                        <div class="income-card card flex-col sm:flex-row basis-[240px] grow">
+                            <div class="card-details flex-row sm:flex-col">
+                                <h3 class="text-sm/tight text-gray-950">Total Expenses</h3>
+                                <ion-icon name="arrow-down-outline" class="text-red-600 font-bold"></ion-icon>
+                            </div>
+                            <h1 class="font-semibold font-[Poppins] text-2xl text-black sm:text-5xl w-full sm:h-full sm:grow flex justify-center items-center">$3,750.90</h1>
+                            <div class="card-details flex-row sm:flex-col">
+                                <small class="income-change border-red-200 bg-red-100 text-red-900">-4.2%</small>
+                                <p class="text-sm/tight text-gray-950">Last Month</p>
+                            </div>
+                        </div>
+                        <div class="card basis-[180px] flex flex-col justify-between">
+                            <p class="font-semibold text-xs text-black">Net Balance <small class="font-normal text-[10px]">(Income Expanded)</small></p>
+                            <h1 class="font-semibold font-[Poppins] text-xl text-black sm:text-3xl w-full flex items-center gap-2">
+                                <ion-icon name="trending-up-outline" class="text-green-600 font-bold"></ion-icon> $3800
+                            </h1>
+                            <p class="flex flex-wrap gap-2 font-semibold text-sm text-black">
+                                saving rate <span class="text-xs font-normal border border-green-800 bg-green-200 text-green-500 w-fit h-fit p-1 rounded-md">30% of total income rate</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <p class="text-lg">hello world</p> -->
+    </div>
+
+
+    <script>
+        let navbar = document.getElementById("navbar");
+        let navIcons = document.getElementsByClassName('nav-icon');
+        let root = document.documentElement;
+        let themeToggle = document.querySelectorAll('[name="theme"]')
+        console.log(themeToggle);
+
+        // picking the user preferred theme from local storage or system preference
+        root.classList.toggle('dark', localStorage.theme === 'dark' || (!(localStorage.theme) && window.matchMedia('(prefers-color-scheme: dark)').matches));
+        for(let toggle of themeToggle){
+            if(root.classList.contains('dark')){
+                if(toggle.id === 'dark-mode-radio'){
+                    toggle.checked = true;
+                }
+            }else{
+                if(toggle.id === 'light-mode-radio'){
+                    toggle.checked = true;
+                }
+            }
+        }
+
+
+
+
+        for (let element of navIcons){
+            element.addEventListener('click', ()=>{
+                navbar.style.display === 'none' ? navbar.style.display = 'flex': navbar.style.display='none'
+                navbar.style.width === '0px' ? navbar.style.width = '320px': navbar.style.width='0px'
+            })
+        };
+
+        function light_mode(){
+            root.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+        function dark_mode(){
+            root.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

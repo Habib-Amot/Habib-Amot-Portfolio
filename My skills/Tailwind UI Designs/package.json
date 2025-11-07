@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-ui-designs",
+  "version": "1.0.0",
+  "description": "This lesson is to learn about TailwindCss and how to use to design modern and sleek web UIs",
+  "license": "ISC",
+  "author": "Habib Amot",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "postcss input.css -o output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "cssnano": "^7.1.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.14"
+  }
+}
