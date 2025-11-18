@@ -84,7 +84,7 @@ let data = {
     }
 }
 
-/* function getIDs(array, id){
+function getIDs(array, id){
 
     let IDs = [];
     if((!Array.isArray(array)) && typeof array === 'object'){
@@ -113,5 +113,5 @@ let data = {
     return(IDs.length > 0 ? IDs : '');
 }
 console.log(getIDs(data, 'id'))
- */
+ 
 
