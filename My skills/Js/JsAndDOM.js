@@ -39,7 +39,7 @@ console.log(document.querySelectorAll('.parent p'))  // returns all p tags insid
 /*                       CHANGING THE DOM                             */
 // let say we want want to remove the last 'p' tag in the DOM
 
-documentBody.removeChild(document.querySelector('body > p:last-of-type'))
+// documentBody.removeChild(document.querySelector('body > p:last-of-type'))
 // document.querySelector('body > p:last-of-type').remove()
 // or we can append to the end of an element
 let newP = document.createElement('p')

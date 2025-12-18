@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=task_alt" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background: #f4f1f1;
+        }
+        .parent-container{
+            width: 100%;
+            min-height: 100%;
+            padding-bottom: 3rem;
+        }
+        .parent-container .heading{
+            width: 100%;
+            height: auto;
+            padding: 1rem 4rem;
+        }
+        .parent-container .heading .brand-name{
+            font-size: 1.3rem;
+            color: #111;
+        }
+        .brand-name span{
+            color: #015d01c6;
+        }
+        .parent-container .register-form{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        .parent-container .register-form form{
+            width: 450px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .parent-container .register-form form .input-section{
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .parent-container .register-form form .input-section .field{
+            width: 100%;
+            height: auto;
+        }
+
+        .parent-container .register-form form .input-section .field .password-strength{
+            width: 100%;
+            height: auto;
+            margin-top: .5rem;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .strength-indicator{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-inline: 8px;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .strength-indicator .bar{
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .strength-indicator .bar .indicator{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: orange;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .strength-indicator .text{
+            font-size: 12px;
+            color: #222;
+            font-weight: bold;
+            margin-top: .3rem;
+        }
+
+        .parent-container .register-form form .input-section .field .password-strength .password-status{
+            width: 100%;
+            height: auto;
+            margin-top: .8rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            padding-inline: 8px;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .password-status .status{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            opacity: 0.4;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .password-status .status .material-symbols-outlined{
+            font-size: 18px;
+        }
+        .parent-container .register-form form .input-section .field .password-strength .password-status .status .status-text{
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+        }
+        .parent-container .register-form form .input-section .input-field{
+            width: 100%;
+            height: 56px;
+            display: flex;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+        .parent-container .register-form form .input-section .input-field input{
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            border-radius: 28px;
+            padding: .5rem 1rem;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        .parent-container .register-form form .input-section .input-field input:focus + label, 
+        .parent-container .register-form form .input-section .input-field input:valid + label{
+            top: 2px;
+            left: 4px;
+            z-index: 200;
+            background: transparent;
+            padding-inline: .5rem;
+        }
+        .parent-container .register-form form .input-section .input-field label{
+            position: absolute;
+            font-size: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 8px;
+            z-index: 400;
+            color: black;
+            width: fit-content;
+            padding-inline: 1rem;
+            background: white;
+        }
+        .parent-container .register-form form .input-section > small{
+            font-size: 12px;
+            color: red;
+            padding-left: 16px;
+            display: none;
+        }
+        .parent-container .register-form form button{
+            width: 360px;
+            height: auto;
+            padding-block: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 28px;
+            border: none;
+            outline: none;
+            background: #000;
+            color: white;
+            font-size: 14px;
+        }
+        .parent-container .register-form form .alternate-sign-in{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .parent-container .register-form form .alternate-sign-in button{
+            width: 50px;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+        .parent-container .register-form form .alternate-sign-in button img{
+            width: 28px;
+            height: 24px;
+        }
+        .parent-container .footer{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-block: 2rem;
+        }
+        .parent-container .footer p{
+            font-size: 14px;
+            color: #222;
+            cursor: pointer;
+            text-decoration: underline;
+            padding-inline: 2rem;
+            border-right: 2px solid #222;
+        }
+        .parent-container .footer p:last-child{
+            border-right: none;
+        }
+        .confirm-password{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <header class="heading">
+            <h1 class="brand-name">Amo<span>Tech</span></h1> 
+        </header>
+        <div class="register-form">
+            <!-- Form content will go here -->
+            <form action="#">
+                <h1>Create an account</h1>
+                <div class="input-section">
+                    <div class="field">
+                        <div class="input-field">
+                            <input type="text" required>
+                            <label for="full-name">Full name</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="input-field">
+                            <input type="email" id="email" required>
+                            <label for="email">Email address</label>
+                        </div>
+                        <small></small>
+                    </div>
+                    <div class="field">
+                        <div class="input-field">
+                            <input type="password" id="password" required>
+                            <label for="Password">Password</label>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-indicator">
+                                <div class="bar">
+                                    <div class="indicator"></div>
+                                </div>
+                                <small class="text"></small>
+                            </div>
+                            <div class="password-status">
+                                <div class="status min-chars">
+                                    <span class="material-symbols-outlined">task_alt</span>
+                                    <div class="status-text">
+                                        <small>At least 8 characters</small>
+                                    </div>
+                                </div>
+                                <div class="status include-number">
+                                    <span class="material-symbols-outlined">task_alt</span>
+                                    <div class="status-text">
+                                        <small>Include numbers</small>
+                                    </div>
+                                </div>
+                                <div class="status uppercase-letter">
+                                    <span class="material-symbols-outlined">task_alt</span>
+                                    <div class="status-text">
+                                        <small>Contains Uppercase Letter</small>
+                                    </div>
+                                </div>
+                                <div class="status lowercase-letter">
+                                    <span class="material-symbols-outlined">task_alt</span>
+                                    <div class="status-text">
+                                        <small>Contains lowercase letter</small>
+                                    </div>
+                                </div>
+                                <div class="status special-character">
+                                    <span class="material-symbols-outlined">task_alt</span>
+                                    <div class="status-text">
+                                        <small>Contains Special characters</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field confirm-password-field">
+                        <div class="input-field">
+                            <input type="password" id="confirm-password" required>
+                            <label for="confirm-password">Confirm Password</label>
+                        </div>
+                    </div>
+                </div>
+                <button>Create account</button>
+                <p>Alread have an account ? <a href="#">Log in</a></p>
+                <p style="font-size: 14px; color: #222;">OR Continue with</p>
+                <div class="alternate-sign-in">
+                    <button>
+                        <img src="./images/icons8-google-logo-48-removebg-preview.png" alt="">
+                    </button>
+                    <button>
+                        <img src="./images/apple-icon.png" alt="apple logo">
+                    </button>
+                    <button>
+                        <img src="./images/microsoft-icon.png" alt="Microsoft logo">
+                    </button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <p>Terms of Use</p>
+            <p>Privacy Policy</p>
+        </footer>
+    </div>
+
+    <script src="./Handling-form.js"></script>
+</body>
+</html>

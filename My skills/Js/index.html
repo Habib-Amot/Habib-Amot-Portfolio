@@ -10,7 +10,12 @@
         }
         small{
             display: block;
-            height: 100vh;
+        }
+        .dot{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: green;
         }
     </style>
 </head>
@@ -31,7 +36,20 @@
     <input type="password">
     <input type="checkbox" name="password-toggle" id="">
     <p class="last-p">I am the last child but js wont allow me show</p>
+
+    <form action="#" >
+        <H1>Login</H1>
+        <label for="username">Enter Username</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Enter password</label>
+        <input type="password" name="password" id="password"><br>
+        <button>
+            submit
+        </button>
+    </form>
+
     <script src="./JsAndDOM.js"></script>
+    <script src="./Handling-Events.js"></script>
     
 </body>
 </html>
