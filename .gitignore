@@ -1,10 +1,6 @@
-.env
+/Fullstack Apps
+/scripts
+/porfolio website
+/NextJs Apps
+/My skills
 
-backup-data.json
-backup-tool.py
-cleaned-data.json
-RunningTests/
-My skills/Web3/
-Web3 Projects/
-
-*.vy
