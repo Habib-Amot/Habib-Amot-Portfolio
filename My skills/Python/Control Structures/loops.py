@@ -14,9 +14,9 @@ for name in names:
 
 # or we can loop over a range of numbers and then print the decicmal, binary, octal and hex value of the num er
 print("{0:^6} {1:^6} {2:^6} {3:^6}".format("Number", "Binary", "Octal", "Hex"))
-print("{0:-^6} {0:-^6} {0:-^6} {0:-^6}".format(""))
+print("{0:-^6} {0:-^7} {0:-^6} {0:-^6}".format(""))
 for i in range(1, 17):
-    print("{0:<#6} {0:<#6b} {0:<#6o} {0:<#6x}".format(i))
+    print("{0:<#6} {0:<#7b} {0:<#6o} {0:<#6x}".format(i))
 
 
 print()
