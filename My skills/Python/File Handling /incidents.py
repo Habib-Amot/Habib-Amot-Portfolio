@@ -40,6 +40,7 @@ class IncidentCollection(dict):
     
     keys = __iter__
 
+print("test")
 
 
 i = Incident("23467136", 123, "Dana Airport", 23456, "sonic", 2000, 12, )
