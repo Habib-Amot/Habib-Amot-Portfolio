@@ -67,9 +67,10 @@ except ValueError:
 
 print('we can use the endswith method to determine if a string ends with a given choices or not')
 file_name = "my-cat.png"
-print(f'this file is {"a" if file_name.endswith(('jpeg', 'jpg')) else "not"} jpeg file')
-# we can also make use of maketrans and tranlate method to create a translation rule of mapping characters to another characters
-# e.g 
+print(f'this file is {"a" if file_name.endswith(("jpeg", "jpg")) else "not"} jpeg file''')
+# we can also make use of maketrans and tranlate method to create a translation rule of mapping
+# characters to another characters
+# e.g.
 print('*'*10,'making translation','*'*10)
 name_map = str.maketrans('Hau', 'Bei')
 print(full_name.translate(name_map))
@@ -107,8 +108,8 @@ print("{0:-^20}  {0:-^20}".format(""))
 
 """ Format Specification for Integers """
 # format specification for integers and floats are more complex than that of strings
-# first we have the fill,alignment(<,^,> or =),sign(can be +, - or space),#(force the base prefix),zero(zero padding between sign), width, 
-# comma, precision and type
+# first we have the fill,alignment(<,^,> or =),sign(can be +, - or space),#(force the base prefix),
+# zero(zero padding between sign), width, comma, precision and type
 # for example
 machine_speed = 1242895.1953986
 # now we want to perform some formatting with this number
