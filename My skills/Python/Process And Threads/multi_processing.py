@@ -53,7 +53,7 @@ def main():
 
 
 
-def get_files(locations: list, recurse: bool=False) -> list: 
+def get_files(locations: list, recurse_dir: bool=False) -> list: 
     assert isinstance(locations, list), "please enter a collection of locations to search"
     files = []
 
@@ -62,7 +62,7 @@ def get_files(locations: list, recurse: bool=False) -> list:
             files.append(location)
 
         if os.path.isdir(location):
-            if not recurse:
+            if not recurse_dir:
                 files_in_location = [location + '\\'+ file for file in os.listdir(location) if os.path.isfile(os.path.join(location, file))]
                 files.extend(files_in_location)
                 continue
@@ -80,6 +80,7 @@ def get_opt():
     parser.add_argument('-w','--word', type=str, required=True, help="the word or phrase to search for in files", dest='search_word')
     parser.add_argument('-r', '--recurse', help="either to recurse directories or not", default=False, action='store_true')
     parser.add_argument('-p', '--process', help="the number of process to create for the task", default=7, dest='process_count')
+    parser.add_argument('-t', '--threads', help="the number of threads to create for the task", default=7, type=int)
     parser.add_argument('locations', help='the folder or files(s) to search word from', nargs='+')
     args = parser.parse_args()
     return args
