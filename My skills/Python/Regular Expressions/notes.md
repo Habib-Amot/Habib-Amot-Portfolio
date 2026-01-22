@@ -37,6 +37,31 @@ Having a different minimum and maximum is often convenient. For example, to matc
 
 If we use the regex `\d+` it will match 136. But why does it match all the digits, rather than just the first one? By default, all quantifiers are greedy—they match as many charactersas they can. We can make any quantifier nongreedy (also called minimal by following it with a ? symbol. (The question mark has two different meanings—on its own it is a shorthand for the {0,1} quantifier, and when it follows a quantifier it tells the quantifier to be nongreedy.
 
+## Backtracking
+
+**Backtracking** is the mechanism by which regex engines try different ways to match a pattern when the initial attempt fails. The engine explores alternative paths by "backing up" and trying different combinations of quantifiers and alternations.
+
+### How Backtracking Works
+
+1. **Greedy Quantifiers**: When a greedy quantifier (like `*`, `+`, `{m,n}`) matches, it consumes as many characters as possible. If the rest of the pattern fails, the engine **backtracks** by giving back characters one at a time and retrying.
+
+2. **Example**: The regex `.*x` applied to `"abcxdefx"`:
+   - `.*` greedily matches the entire string: `"abcxdefx"`
+   - The engine then tries to match `x`, but there's nothing left
+   - It backtracks, giving back one character: `"abcxdef"`
+   - Tries `x` again—still no match
+   - Continues backtracking until it finds `x` at position 3: `"abcx"`
+
+3. **Non-Greedy Quantifiers**: Non-greedy quantifiers (like `*?`, `+?`, `{m,n}?`) match as few characters as possible. If the rest of the pattern fails, the engine **backtracks forward** by consuming more characters and retrying.
+
+4. **Performance Impact**: Excessive backtracking can cause **catastrophic backtracking** (also called "regex denial of service"), where the engine tries exponentially many combinations, making the regex extremely slow or causing it to hang.
+
+5. **Best Practices**:
+   - Use non-greedy quantifiers when you know the minimum needed
+   - Be specific with character classes instead of using `.*`
+   - Use atomic groups `(?>...)` to prevent backtracking into the group
+   - Consider using `re.compile()` with `re.VERBOSE` for complex patterns
+
 ## Grouping and Capturing
 In practical applications we often need regexes that can match any one of two or more alternatives, and we often need to capture the match or some part of the match for further processing. Also, we sometimes want a quantifier to apply to several expressions. All of these can be achieved by grouping with (), and in the case of alternatives using alternation with |.
 
