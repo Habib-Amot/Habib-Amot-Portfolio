@@ -72,7 +72,7 @@ print("=" * 60)
 # regex can also be used to substitute names in a text
 # given that names are in the format, firstname, middlename1 middlename2 ... , lastname
 # we can create a regex to capture these names and swap them to lastname, firstname middlenames format
-name_swap = re.compile(r'(\w+(?:\w+[\s,]+)*)(\w+)')
+name_swap = re.compile(r'(\w+[,\s]+(?:\w+[\s,]+)*)(\w+)')
 my_name = "Habib, Amot, Oluwaseyi, Gemini, Yakubu"
 
 swapped_name = name_swap.sub(r"\2 \1", my_name)
