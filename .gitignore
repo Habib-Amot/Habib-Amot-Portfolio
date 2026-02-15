@@ -1,6 +1,7 @@
-
+*.pyc
 My skills/Python/Logging/custom-log.log
 My skills/Python/Logging/scripts.log
 scripts.log
 Automation Skills/Working With Excel Sheets/Automate_the_Boring_Stuff_3e_onlinematerials.zip
 Automation Skills/Working With Excel Sheets/Automate_the_Boring_Stuff_2e_onlinematerials.zip
+My skills/APIs/Building API/Trust_Bank/applications/users/__pycache__/__init__.cpython-314.pyc
