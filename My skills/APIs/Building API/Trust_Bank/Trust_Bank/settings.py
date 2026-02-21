@@ -34,8 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'applications',
     'applications.users',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework_api_key'
 ]
 
 MIDDLEWARE = [
@@ -132,7 +134,11 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication'
     ]
 }
+
+# custom api key model
+API_KEY_CUSTOM_MODEL = 'applications.users.UserAPIKey'

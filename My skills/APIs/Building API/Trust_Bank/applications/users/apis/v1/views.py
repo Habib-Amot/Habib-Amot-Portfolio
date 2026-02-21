@@ -1,6 +1,7 @@
 from django.urls import reverse
-from django.core.mail import send_mail
+from django.db import transaction
 from django.contrib.auth import authenticate, login
+from django.utils.decorators import method_decorator
 
 from rest_framework.views import APIView
 from rest_framework import status
@@ -8,30 +9,12 @@ from rest_framework.response import Response
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from applications.users.models import Profile
 from applications.users.serializers import RegistrationSerializer
+from applications.users.services.user_details import user_profile_summary
+from applications.users.services.authentications import IsAuthenticatedOrHasAPIKey
 
-
-# this view is made for browsers and not for any other script that does not run within a browser
-class LoginView(APIView):
-
-    def post(self, request):
-        username = request.data.get('username', None)
-        password = request.data.get('password', None)
-
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return Response(
-                {'redirect': reverse('user-dashboard')}
-            )
-        
-        else:
-            return Response({
-                'error': 'invalid credentials',
-                'message': "Invalid username or password"
-            }, status=status.HTTP_401_UNAUTHORIZED)
-
-
+@method_decorator(transaction.atomic, name='post')
 class RegistrationView(APIView):
     def post(self, request):
         # getting the submitted data from the user
@@ -42,7 +25,9 @@ class RegistrationView(APIView):
             # saving the user to the database
             user = submitted_data.save()
 
-            user_email: str = submitted_data.validated_data.get('email')
+            # creating a profile for the user
+            Profile.objects.create(user=user, account_number = '7033900263')
+            """ user_email: str = submitted_data.validated_data.get('email')
 
             message = "<h1>This is a test email from my backend</h1>"
             send_mail(
@@ -50,21 +35,27 @@ class RegistrationView(APIView):
                 message=message, 
                 from_email='habibgemini1@gmail.com', 
                 recipient_list=[user_email]
-            )
+            ) """
 
             # create a JWT token for the user 
             tokens = RefreshToken.for_user(user=user)
             return Response({
-                "tokens": tokens, "message":"account created successfully", "redirect_to": reverse('user-dashboard')
-                })
+                "tokens": {
+                    'access': str(tokens.access_token),
+                    "refresh": str(tokens)
+                    }, 
+                "message":"account created successfully", 
+                "redirect_to": reverse('user-dashboard')
+            })
         
         else:
             return Response({"message":submitted_data._errors,}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class UserDashboardView(APIView):
-    def post(self, request):
-        return Response('this is the user dashboard')
+    permission_classes = [IsAuthenticatedOrHasAPIKey]
     
     def get(self, request):
-        return Response('this is the user dashboad get page')
+        user = request.user
+        profile_summary = user_profile_summary(user=user)
+        return Response(profile_summary)
