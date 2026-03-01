@@ -1,18 +1,20 @@
+import random
+
 from django.urls import reverse
 from django.db import transaction
-from django.contrib.auth import authenticate, login
 from django.utils.decorators import method_decorator
 
-from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from applications.users.models import Profile
 from applications.users.serializers import RegistrationSerializer
-from applications.users.services.user_details import user_profile_summary
 from applications.users.services.authentications import IsAuthenticatedOrHasAPIKey
+from applications.users.services.user_details import user_profile_summary, get_user_transactions
 
 @method_decorator(transaction.atomic, name='post')
 class RegistrationView(APIView):
@@ -26,7 +28,7 @@ class RegistrationView(APIView):
             user = submitted_data.save()
 
             # creating a profile for the user
-            Profile.objects.create(user=user, account_number = '7033900263')
+            Profile.objects.create(user=user, account_number = ''.join(str(num) for num in random.sample(range(10), 10)))
             """ user_email: str = submitted_data.validated_data.get('email')
 
             message = "<h1>This is a test email from my backend</h1>"
@@ -40,6 +42,7 @@ class RegistrationView(APIView):
             # create a JWT token for the user 
             tokens = RefreshToken.for_user(user=user)
             return Response({
+                "status": "SUCCESS",
                 "tokens": {
                     'access': str(tokens.access_token),
                     "refresh": str(tokens)
@@ -59,3 +62,12 @@ class UserDashboardView(APIView):
         user = request.user
         profile_summary = user_profile_summary(user=user)
         return Response(profile_summary)
+    
+
+class AllUserTransactions(APIView):
+    renderer_classes = [JSONRenderer]
+    permission_classes = [IsAuthenticatedOrHasAPIKey]
+
+    def get(self, request):
+        user_transactions = get_user_transactions(user=request.user)
+        return Response(user_transactions)

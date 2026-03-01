@@ -9,12 +9,24 @@ User = get_user_model()
 def user_profile_summary(user):
     username = user.username
     balance = user.profile.account_balance
-    recent_transactions = Transaction.objects.filter(user=user).order_by('-timestamp')[2]
+    recent_transactions = Transaction.objects.filter(user=user).order_by('-timestamp')[:2]
 
     return {
         "username": username,
         "balance": balance,
         "recent_transactions":[
-            TransactionSerializer(tnx) for tnx in recent_transactions
+            TransactionSerializer(instance=tnx).data for tnx in recent_transactions if recent_transactions
+        ]
+    }
+
+
+def get_user_transactions(user):
+    try:
+        transactions = Transaction.objects.filter(user=user)
+    except Transaction.DoesNotExist:
+        transactions = []
+    return {
+        'transactions':[
+            TransactionSerializer(instance=tnx).data for tnx in transactions if transactions
         ]
     }

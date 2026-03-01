@@ -24,6 +24,20 @@ class RegistrationSerializer(ModelSerializer):
                 'write_only': True,
             }
         }
+
+    def create(self, validated_data):
+        # getting the password that the user submitted
+        password = validated_data.pop('password')
+        print(666)
+
+        user = User.objects.create(**validated_data)
+
+        #setting the password for the user
+        user.set_password(password)
+        user.save()
+        return user
+
+
     
     def validate(self, attrs):
         # making confirmation that the provided password is the same as the confirm password field
