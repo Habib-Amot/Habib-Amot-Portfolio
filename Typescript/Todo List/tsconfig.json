@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "rootDir": "./src",
+        "outDir": "./dst",
+        "module": "commonjs",
+        "skipLibCheck": true
+    }
+}

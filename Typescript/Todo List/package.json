@@ -1,0 +1,22 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/inquirer": "^9.0.10",
+    "inquirer": "^14.0.2",
+    "lowdb": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/lowdb": "^1.0.15",
+    "@types/node": "^26.2.0"
+  }
+}
